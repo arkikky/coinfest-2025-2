@@ -82,7 +82,7 @@ export default function Document() {
       </Head>
       <body>
         <Main />
-        <NextScript nonce={hashNonce256} />
+        <NextScript />
         {/* @meta-pixel */}
         <noscript>
           <Image

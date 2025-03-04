@@ -257,13 +257,13 @@ const OrderReceived = ({
                   }),
                 }).then((rs) => rs?.json());
                 // @add-tracking-purchase
-                trackingPurchase(
-                  isOrderRecived?.order?.documentId,
-                  grpAttendee,
-                  setIsCoupon,
-                  isSubTotal,
-                  isUpgradeBull
-                );
+                // trackingPurchase(
+                //   isOrderRecived?.order?.documentId,
+                //   grpAttendee,
+                //   setIsCoupon,
+                //   isSubTotal,
+                //   isUpgradeBull
+                // );
                 for (let i = 0; i < grpAttendee?.length; i++) {
                   const isGrpdAttendee = grpAttendee[i];
                   const tickets =

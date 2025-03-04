@@ -54,13 +54,13 @@ const App = ({ Component, pageProps }) => {
     ((page) => {
       return (
         <>
-          <GlobalProvider>
-            <StoreProvider>
-              <LayoutDefaults>
-                <Component {...pageProps} />
-              </LayoutDefaults>
-            </StoreProvider>
-          </GlobalProvider>
+          {/* <GlobalProvider> */}
+          <StoreProvider>
+            <LayoutDefaults>
+              <Component {...pageProps} />
+            </LayoutDefaults>
+          </StoreProvider>
+          {/* </GlobalProvider> */}
         </>
       );
     });
@@ -94,13 +94,13 @@ const App = ({ Component, pageProps }) => {
         </Head>
 
         {/* @layouts */}
-        <GlobalProvider>
-          <StoreProvider>
-            {getLayout(<Component {...pageProps} />, {
-              pageProps: pageProps || {},
-            })}
-          </StoreProvider>
-        </GlobalProvider>
+        {/* <GlobalProvider> */}
+        <StoreProvider>
+          {getLayout(<Component {...pageProps} />, {
+            pageProps: pageProps || {},
+          })}
+        </StoreProvider>
+        {/* </GlobalProvider> */}
 
         {/* @script */}
         <PrelineScript />
