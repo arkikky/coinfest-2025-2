@@ -17,9 +17,6 @@ import Image from 'next/image';
 // } from '@lib/helper/TrackingAnalytics';
 
 export default function Document() {
-  const hashNonce256 = CryptoJS.SHA256(nonceSha256).toString(
-    CryptoJS.enc.Base64
-  );
   return (
     <Html lang="en">
       <Head>
