@@ -36,7 +36,7 @@ import Speakers from '@layouts/Speakers';
 import PortalBanner from '@layouts/Banner/PortalBanner';
 import GetInvolved from '@layouts/GetInvolved';
 import WhatsHappening from '@layouts/WhatsHappening';
-import SocialMentions from '@layouts/SocialMentions';
+// import SocialMentions from '@layouts/SocialMentions';
 import FAQ from '@layouts/FAQ';
 import MoonPortalBanner from '@layouts/Banner/MoonPortalBanner';
 
@@ -48,7 +48,7 @@ const Home = ({ mode, collections, products }) => {
     speakers: collections?.speakers,
     getinvolved: collections?.getinvolved,
     whatsHappening: collections?.whatsHappening,
-    socialMentions: collections?.socialMentions,
+    // socialMentions: collections?.socialMentions,
     faq: collections?.faq,
   });
 
@@ -141,45 +141,6 @@ const Home = ({ mode, collections, products }) => {
         <Abouts mode={mode} result={isCollections?.aboutus} />
 
         {/* @tickets */}
-        <section className="ca25Ticket-Section pb-24 pt-[92px] sm:pt-32 lg:pt-28 xl:pt-[144px]">
-          <Container className={'relative'}>
-            <div className="ca25MoonRckt !pointer-events-none absolute inset-x-0 inset-y-0 z-px mx-auto w-full !select-none"></div>
-
-            <div className="mb-8 flex flex-col items-center justify-center text-center sm:mb-12">
-              <h2
-                className={`ca25HeadingTitle w-full text-center font-bold uppercase ${mode === 'light' ? 'text-black-900' : 'text-white'} text-balance`}
-              >
-                {'GET YOUR TICKETS NOW'
-                  ?.split('')
-                  .map((chr, i) =>
-                    ['E', 'O'].includes(chr) ? <span key={i}>{chr}</span> : chr
-                  )}
-              </h2>
-              <p className="mt-2 font-bevietnamPro text-base font-light text-gray-300 sm:mt-3.5 sm:text-xl">
-                {`Prices exclude VAT`}
-              </p>
-            </div>
-            {/* @products */}
-            <div className="mt-4 grid-cols-1 gap-x-4 gap-y-4 supports-grid:grid sm:mt-10 sm:grid-cols-2 xl:grid-cols-3">
-              {isProducts?.slice(0, 6).map((gtRslt, i) => {
-                return (
-                  <Fragment key={i}>
-                    <TicketProducts
-                      useHeading={'h3'}
-                      data={gtRslt}
-                      cartProducts={getStore}
-                      isLoading={
-                        sessionsProducts?.id_product === gtRslt.documentId &&
-                        sessionsProducts?.loading === true
-                      }
-                      isSessionLoading={sessionsProducts?.loading}
-                    />
-                  </Fragment>
-                );
-              })}
-            </div>
-          </Container>
-        </section>
 
         {/* @banner(portal) */}
         <PortalBanner mode={mode} id={'ca25PortalBanner0'} />
@@ -188,7 +149,7 @@ const Home = ({ mode, collections, products }) => {
         <Speakers mode={mode} result={isCollections?.speakers} />
 
         {/* @partners */}
-        <Partners mode={mode} result={collections?.partners} />
+        {/* <Partners mode={mode} result={collections?.partners} /> */}
 
         {/* @getinvolved & whats-happening */}
         <div className="ca25Group relative bg-transparent pb-0 sm:pb-12">
@@ -203,7 +164,7 @@ const Home = ({ mode, collections, products }) => {
         <PortalBanner mode={mode} id={'ca25PortalBanner1'} />
 
         {/* @social-mentions */}
-        <SocialMentions mode={mode} result={isCollections?.socialMentions} />
+        {/* <SocialMentions mode={mode} result={isCollections?.socialMentions} /> */}
 
         {/* @faq */}
         <FAQ mode={mode} result={isCollections?.faq} />
