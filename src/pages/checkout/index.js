@@ -129,7 +129,7 @@ const Checkout = ({ ipAddress, country, coupons, formCheckout }) => {
     const isTotalOrder = calculateTotalOrder(
       isCoupon ? isDiscount?.totalWithDiscount : totalOrder
     );
-    trackingBeginCheckout(getStore, getIsCoupon, isTotalOrder);
+    // trackingBeginCheckout(getStore, getIsCoupon, isTotalOrder);
   }, [getStore, getCoupon, isDiscount?.totalWithDiscount, totalOrder]);
 
   // @btn-step(attendee)
@@ -472,7 +472,7 @@ const Checkout = ({ ipAddress, country, coupons, formCheckout }) => {
       const isTotalOrder = calculateTotalOrder(
         isCoupon ? isDiscount?.totalWithDiscount : totalOrder
       );
-      trackingCheckoutJourney(getStore, getIsCoupon, isTotalOrder);
+      // trackingCheckoutJourney(getStore, getIsCoupon, isTotalOrder);
       if (Math.abs(isTotalOrder) > 1e-10) {
         setStore((prev) => ({ ...prev, isPaymentProcess: true }));
       } else if (Math.abs(isTotalOrder) < 1e-10) {
@@ -1424,7 +1424,7 @@ export const getServerSideProps = async (context) => {
         ),
         getFetchUrl(`https://restcountries.com/v3.1/all?fields=name,flags`),
         getFetch(
-          process.env.NODE_ENV === 'development'
+          process.env.NODE_ENV !== 'development'
             ? `/api/coupons?filters[category][$eq]=dev&populate=*`
             : `/api/coupons?filters[category][$eq]=promo&populate=*`
         ),

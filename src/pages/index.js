@@ -248,11 +248,11 @@ export const getServerSideProps = async (context) => {
           whatsHappening: rsWhatsHappening?.data || null,
           socialMentions: rsSocialMentions?.data || null,
           faq: rsFAQ?.data || null,
-          partners: {
-            prevPartners: rsPrevPartners?.data || null,
-            mediaPartners: rsMediaPartner || null,
-            communityPartners: rsCommunityPartners || null,
-          },
+          // partners: {
+          //   prevPartners: rsPrevPartners?.data || null,
+          //   mediaPartners: rsMediaPartner || null,
+          //   communityPartners: rsCommunityPartners || null,
+          // },
         },
         products: rsProducts || [],
       },
